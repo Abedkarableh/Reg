@@ -1,0 +1,40 @@
+{{extend 'layout.html'}}
+{{response.title = 'Search Courses Page'}}
+<div class="container-fluid main-container">
+    <div class="row">
+        <div id="web2py_user_form" class="col-lg-6"
+            style="background-color:white; margin: 0 auto 5px auto; box-shadow: 0 0 5px #a1a1a1; border-radius:5px;padding: 20px">
+            <h2>
+             Search Courses       
+            </h2>
+            <br>
+            <div>
+            {{=form}}
+            </div>
+{{if courses:}}
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Code</th>
+            <th>Name</th>
+            <th>Instructor</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{for course in courses:}}
+        <tr>
+            <td>{{=course.code}}</td>
+            <td>{{=course.name}}</td>
+            <td>{{=course.instructor}}</td>
+        </tr>
+        {{pass}}
+    </tbody>
+</table>
+{{else:}}
+<p>No courses found.</p>
+{{pass}}
+
+        </div>
+    </div>
+</div>
+

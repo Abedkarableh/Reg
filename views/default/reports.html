@@ -1,0 +1,67 @@
+{{extend 'layout.html'}}
+{{response.title = 'Reports Page'}}
+<div class="container-fluid main-container">
+    <div class="row">
+        <div id="web2py_user_form" class="col-lg-6"
+            style="background-color:white; margin: 0 auto 5px auto; box-shadow: 0 0 5px #a1a1a1; border-radius:5px;padding: 20px">
+            <h2>
+            Reports     
+            </h2>
+            <div>
+<h3>Course Enrollment Data</h3>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Course Code</th>
+            <th>Enrollment Count</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{for row in course:}}
+        <tr>
+            <td>{{=row['code']}}</td>
+        </tr>
+        {{pass}}
+    </tbody>
+</table>
+
+<h3>Room Utilization Data</h3>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Room Number</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{for row in room:}}
+        <tr>
+            <td>{{=row['room_no']}}</td>
+        </tr>
+        {{pass}}
+    </tbody>
+</table>
+
+<h3>Course Schedule Data</h3>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Course ID</th>
+            <th>Start Time</th>
+            <th>End Time</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{for row in courseschedule:}}
+        <tr>
+            <td>{{=row['id']}}</td>
+            <td>{{=row['startTime']}}</td>
+            <td>{{=row['endTime']}}</td>
+        </tr>
+        {{pass}}
+    </tbody>
+</table>
+
+            </div>
+        </div>
+    </div>
+</div>
